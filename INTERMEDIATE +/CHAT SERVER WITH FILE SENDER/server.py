@@ -7,7 +7,7 @@ IP_ADDRESS = 'localhost'
 PORT = 12345
 address = (IP_ADDRESS, PORT)
 GET_CODE = "GETDATA"
-FILE_TO_SEND = 'SEND/1.txt'
+FILE_TO_SEND = 'SEND/img.jpg'
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(address)
@@ -63,7 +63,7 @@ try:
                 file = bin(file)
                 file = file.encode('utf-8')
                 soc.send(file)
-                print("Sneding the file Now")
+                print("Sending the file Now")
                 with open(FILE_TO_SEND, 'rb') as f:
                     for i in f:
                         soc.send(i)
